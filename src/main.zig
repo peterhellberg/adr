@@ -35,9 +35,9 @@ pub fn main() !void {
         try ensureDirsExist();
         try rebuildReadme(allocator);
     } else {
-        const @"help.txt" = @embedFile("./templates/help.txt");
+        const help_txt = @embedFile("./templates/help.txt");
 
-        _ = bw.write(@"help.txt") catch @panic("Unable to write help contents");
+        _ = bw.write(help_txt) catch @panic("Unable to write help contents");
     }
 
     try bw.flush();
@@ -87,9 +87,9 @@ fn generateADR(allocator: std.mem.Allocator, n: u64, name: []u8) !void {
     const f = try std.fs.cwd().createFile(fileName, .{ .read = true });
     defer f.close();
 
-    const @"adr_template.md" = @embedFile("./templates/adr_template.md");
+    const ADR_template = @embedFile("./templates/ADR_template.md");
 
-    const contents = replace(allocator, @"adr_template.md", "{{name}}", heading);
+    const contents = replace(allocator, ADR_template, "{{name}}", heading);
     defer allocator.free(contents);
 
     try f.writeAll(contents);
@@ -105,13 +105,13 @@ fn rebuildReadme(allocator: std.mem.Allocator) !void {
 
     const now = zul.DateTime.now();
 
-    const @"README_template.md" = @embedFile("./templates/README_template.md");
+    const README_template = @embedFile("./templates/README_template.md");
 
     var buf: [30]u8 = undefined;
 
     const date = try std.fmt.bufPrint(&buf, "{s}", .{now});
 
-    const output = replace(allocator, @"README_template.md", "{{timestamp}}", date);
+    const output = replace(allocator, README_template, "{{timestamp}}", date);
     defer allocator.free(output);
 
     const files = try getAllFilesInADRDir(allocator);
