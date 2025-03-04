@@ -1,6 +1,6 @@
 .{
     .name = .adr,
-    .version = "0.0.1",
+    .version = "0.0.2",
     .fingerprint = 0x9cec6b6f09e5b53,
     .minimum_zig_version = "0.14.0-dev.3451+d8d2aa9af",
     .dependencies = .{
