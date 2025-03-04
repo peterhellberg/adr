@@ -54,9 +54,9 @@ adr create WebAssembly runtime for adr
 
 This will create _(or update)_ a `README.md` in your `adr/` directory _(creating that directory if necessary)_.
 
-For example, if this was your first ADR, it would create the file `<YOUR_PROJECT_ROOT>/adr/00000-WebAssembly-runtime-for-adr.md`.
+If this was your first ADR, it would create the file [00000-WebAssembly-runtime-for-adr.md](./adr/00000-WebAssembly-runtime-for-adr.md).
 
-It would then update the README in the same directory with a link to the newly created ADR document.
+It would then update the [README](./adr/README.md) in the same directory with a link to the newly created ADR document.
 
 ### Regenerating the README
 
