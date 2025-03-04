@@ -1,0 +1,17 @@
+.{
+    .name = .adr,
+    .version = "0.0.1",
+    .fingerprint = 0x9cec6b6f09e5b53,
+    .minimum_zig_version = "0.14.0-dev.3451+d8d2aa9af",
+    .dependencies = .{
+        .zul = .{
+            .url = "https://github.com/karlseguin/zul/archive/d9142c73aedc5698beba58b3fbf2bcfe69864778.zip",
+            .hash = "zul-0.0.0-1oDot0BCBwA9cUo5OOrPs5NGmvoM7sk1ztfbdfL7mh4P",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
